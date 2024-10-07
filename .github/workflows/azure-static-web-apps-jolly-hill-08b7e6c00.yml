@@ -32,9 +32,13 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      - env:
+          
+      - name: Build project
+        run: npm run build
+        env:
           REACT_APP_KEY: ${{ secrets.REACT_APP_KEY }}
           REACT_APP_OTHER_VAR: ${{ secrets.REACT_APP_OTHER_VAR }}
+          
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
