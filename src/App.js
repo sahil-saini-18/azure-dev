@@ -7,6 +7,7 @@ function App() {
     console.log("env azure", process.env.REACT_APP_AZURE_TEST_FOO);
   return (
     <div className="App">
+        <h1>React App</h1>
         <p>Hello  {process.env.REACT_APP_KEY}</p>
     </div>
   );
