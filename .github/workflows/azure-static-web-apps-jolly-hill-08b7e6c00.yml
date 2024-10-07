@@ -48,7 +48,9 @@ jobs:
           app_location: "/"  # The source code path for the application
           api_location: ""  # API source code path (if any)
           output_location: "build"  # Built app content directory (for React/Vue it's usually 'build' or 'dist')
-
+        env:
+          AZURE_TEST_FOO: "hello"
+          
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
